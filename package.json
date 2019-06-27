@@ -20,7 +20,10 @@
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.7.0",
+    "react-scrollchor": "^6.0.0",
+    "react-typed": "^1.1.2"
   },
   "devDependencies": {
     "gatsby-plugin-root-import": "^2.0.5",

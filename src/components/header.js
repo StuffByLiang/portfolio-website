@@ -1,17 +1,23 @@
 import PropTypes from "prop-types"
 import React from "react"
 
+import Scrollchor from 'react-scrollchor';
+
 import {Navbar, Nav, Container} from 'react-bootstrap'
 
 const Header = ({ siteTitle }) => (
-  <Navbar expand="lg">
+  <Navbar expand="lg" className="bg-light">
     <Container>
-      <Navbar.Brand href="#home">Liang Liu</Navbar.Brand>
+      {/*<Navbar.Brand href="#home">Liang Liu</Navbar.Brand>*/}
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="justify-content-end w-100">
-          <Nav.Item><Nav.Link href="#home">Projects</Nav.Link></Nav.Item>
-          <Nav.Item><Nav.Link href="#link">Contact</Nav.Link></Nav.Item>
+          {window.location.pathname == "/" ? [
+            <Nav.Item><Scrollchor to="#projects">Projects</Scrollchor></Nav.Item>,
+            <Nav.Item><Scrollchor to="#contact">Contact</Scrollchor></Nav.Item>
+          ] : (
+            <Nav.Item><a href="/">Home</a></Nav.Item>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Container>
