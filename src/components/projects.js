@@ -118,7 +118,8 @@ const Projects = () => (
            'HTML5',
            'CSS3'
          ]}
-         link="https://old.stuffbyliang.com"
+         link="/"
+         github="https://github.com/StuffByLiang/portfolio-website"
        />
        <Project
          imageSrc={old_image}
