@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="justify-content-end w-100">
-          {window.location.pathname == "/" ? [
+          {typeof window !== 'undefined' && window.location.pathname == "/" ? [
             <Nav.Item><Scrollchor to="#projects">Projects</Scrollchor></Nav.Item>,
             <Nav.Item><Scrollchor to="#contact">Contact</Scrollchor></Nav.Item>
           ] : (
