@@ -7,7 +7,7 @@ import ubc_image from "../images/ubc.png"
 import game_image from "../images/game.png"
 import old_image from "../images/old.jpg"
 import this_image from "../images/this.jpg"
-
+import javaurlopener_image from "../images/javaurlopener.png"
 
 
 import {Container, Row, Col} from 'react-bootstrap'
@@ -91,6 +91,16 @@ const Projects = () => (
          ]}
          link="http://ubc.stuffbyliang.com"
          github="https://github.com/StuffByLiang/UBC-Course-Registration-Helper"
+       />
+       <Project
+         imageSrc={javaurlopener_image}
+         title="Java Url Opener"
+         description="Ever get the feeling to save a bunch of tabs you have to open in a few days? Well, this is a configurable java program to open multiple tabs at the same time, to SAVE time. Fully implemented with a nice, console GUI."
+         skills={[
+           'Java',
+           'Object Oriented Programming',
+         ]}
+         github="https://github.com/StuffByLiang/java-urlopener"
        />
        <Project
          imageSrc={game_image}

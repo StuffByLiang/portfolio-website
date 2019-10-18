@@ -133,6 +133,122 @@ section {
   }
 }
 
+.experiences {
+  .experience-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+    overflow: hidden;
+    padding: 30px;
+  }
+
+  .experience-header {
+    display:flex;
+    flex-direction: row;
+
+    img {
+      max-height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .experience-company-info {
+      display:flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  .experience-blurb {
+    font-style: italic;
+    margin-bottom: 0;
+    font-size: 1.05rem;
+  }
+
+  h3 {
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+  }
+
+  .experience-content {
+    margin-top: 15px;
+    z-index: 2;
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    @include media-breakpoint-down(md) {
+      /* smaller than md */
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+    }
+  }
+
+  .experience-skills {
+    margin-top: 15px;
+    line-height: 2.5;
+    word-wrap: break-word;
+
+    .experience-skill {
+      display: inline-block;
+      line-height: 1.2;
+      border-radius: 4px;
+      border: 2px solid $secondary-color;
+      padding: 8px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-size: .85rem;
+      font-weight: 400;
+    }
+  }
+  .experience-link {
+    margin-right: 20px;
+    margin-top: 10px;
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 40px;
+    padding: 0 14px;
+    box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+    border-radius: 4px;
+    letter-spacing: .025em;
+    text-decoration: none;
+    transition: all .15s ease;
+    font-size: .9em;
+    font-weight: 500;
+    box-sizing: border-box;
+    background: $primary-color;
+    color: #fff;
+
+    &.secondary {
+      background: #fff;
+      color: $primary-color;
+
+      &:hover {
+        color: lighten( $primary-color, 10%);
+        background: #fff;
+      }
+    }
+
+    &:hover {
+      background: lighten( $primary-color, 10%);
+      transform: translateY(-1px);
+      box-shadow: 0 7px 14px rgba(50,50,93,.1), 0 3px 6px rgba(0,0,0,.08);
+    }
+  }
+}
+
 .bg-theme {
   background-color: $primary-color;
   color: #333;

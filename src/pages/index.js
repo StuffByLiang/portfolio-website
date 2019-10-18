@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 
 import Hero from "../components/hero"
 import Skills from "../components/skills"
+import Experience from "../components/experience"
 import Projects from "../components/projects"
 
 import {Container, Row, Col} from 'react-bootstrap'
@@ -18,12 +19,13 @@ const IndexPage = () => (
         <Row className="justify-content-md-center">
           <Col md={8}>
             <h2 class="mb-4">Nice to meet you!</h2>
-            <p>I'm a self-driven Entrepreneur and Full-Stack Developer from Vancouver, with 8+ years software and web development experience. I love what I do, being creative while coding, designing new projects, and helping small businessess and individuals improve their online presence by buidling website and creating custom applications. Apart from that, I play Ultimate Frisbee, and do lots of other extracurricular activities. Feel free to take a look around my website, or contact me!</p>
+            <p>I'm a self-driven Entrepreneur and Full-Stack Developer from Vancouver, with 8+ years of software and web development experience. I've always had a constant desire to learn new technologies, and to solve problems with innovative solutions. I enjoy pushing myself to learn more and use the current skills I have to create the best application possible, and I am currently looking for the opportunity to do that in a professional setting! Apart from that, I play Ultimate Frisbee and do lots of other extracurricular activities. Feel free to take a look around my website, or contact me!</p>
           </Col>
         </Row>
       </Container>
     </section>
     <Skills />
+    <Experience />
     <Projects />
   </Layout>
 )
