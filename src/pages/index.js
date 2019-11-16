@@ -19,7 +19,9 @@ const IndexPage = () => (
         <Row className="justify-content-md-center">
           <Col md={8}>
             <h2 class="mb-4">Nice to meet you!</h2>
-            <p>I'm a self-driven Entrepreneur and Full-Stack Developer from Vancouver, with 8+ years of software and web development experience. I've always had a constant desire to learn new technologies, and to solve problems with innovative solutions. I enjoy pushing myself to learn more and use the current skills I have to create the best application possible, and I am currently looking for the opportunity to do that in a professional setting! Apart from that, I play Ultimate Frisbee and do lots of other extracurricular activities. Feel free to take a look around my website, or contact me!</p>
+            <p>Hi! I'm a self-driven entrepreneur, innovative full-stack developer, and leader. I have an extensive portfolio of personal projects using a wide array of technical stacks, as well as experience leading teams. My current interests are entrepreneurship, business administration, machine learning, application development, as well as the world of fintech, specifically open banking.
+
+            I've always had a constant desire to learn new technologies, and over the years, I have strived to gain as much industry knowledge that relates to my interests as I can. Apart from that, I play Ultimate Frisbee and do lots of other extracurricular activities. Feel free to take a look around my website, view my <a class="effect dark" href="resume.pdf" target="_blank">resume</a> or contact me!</p>
           </Col>
         </Row>
       </Container>

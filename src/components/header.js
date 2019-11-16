@@ -15,7 +15,8 @@ const Header = ({ siteTitle }) => (
           {typeof window !== 'undefined' && window.location.pathname === "/" ? [
             <Nav.Item><Scrollchor to="#experience">Experience</Scrollchor></Nav.Item>,
             <Nav.Item><Scrollchor to="#projects">Projects</Scrollchor></Nav.Item>,
-            <Nav.Item><Scrollchor to="#contact">Contact</Scrollchor></Nav.Item>
+            <Nav.Item><Scrollchor to="#contact">Contact</Scrollchor></Nav.Item>,
+            <Nav.Item><a href="resume.pdf" target="_blank">Resume</a></Nav.Item>
           ] : (
             <Nav.Item><a href="/">Home</a></Nav.Item>
           )}
