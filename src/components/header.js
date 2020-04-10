@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
-
-import Scrollchor from 'react-scrollchor';
+import { Link } from "gatsby"
+import Scrollchor from 'react-scrollchor'
 
 import {Navbar, Nav, Container} from 'react-bootstrap'
 
@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
             <Nav.Item><Scrollchor to="#contact">Contact</Scrollchor></Nav.Item>,
             <Nav.Item><a href="resume.pdf" target="_blank">Resume</a></Nav.Item>
           ] : (
-            <Nav.Item><a href="/">Home</a></Nav.Item>
+            <Nav.Item><Link to="/">Home</Link></Nav.Item>
           )}
         </Nav>
       </Navbar.Collapse>
