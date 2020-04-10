@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "stuffbyliang portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Liang's portfolio website made with Gatsby.js and React",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Liang Liu <stuffbyliang@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gatsby": "^2.10.0",
@@ -45,7 +45,4 @@
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
 }
