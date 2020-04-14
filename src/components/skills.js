@@ -17,7 +17,7 @@ const Skill = ({icon, title, description, title2, list}) => (
 )
 
 const Skills = () => (
-  <section class="skills">
+  <section className="skills">
     <Container>
       <Row>
         <Skill

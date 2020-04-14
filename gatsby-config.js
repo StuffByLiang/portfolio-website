@@ -2,15 +2,43 @@ module.exports = {
   siteMetadata: {
     title: `Liang Liu`,
     description: `Hi, I'm Liang Liu, a web developer and mentor based in Vancouver, Canada.`,
-    author: `Liang Liu`,
+    author: {
+      name: `Liang Liu`,
+      summary: `An innovative 18 year old programmer, entrepreneur. Small kid looking to make it big in a huge world.`
+    },
   },
   plugins: [
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-110538806-1",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
+      },
+    },
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`
+        ],
       },
     },
     `gatsby-transformer-sharp`,
