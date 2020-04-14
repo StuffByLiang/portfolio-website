@@ -6,7 +6,7 @@ import Scrollchor from 'react-scrollchor'
 import {Navbar, Nav, Container} from 'react-bootstrap'
 
 const Header = ({ siteTitle }) => {
-  let isHomeScreen = typeof window !== 'undefined' && window.location.pathname === "/";
+  let isHomeScreen = typeof window !== 'undefined' && (window.location.pathname === "/" || window.location.pathname === "");
   return (
   <Navbar expand="lg" className={isHomeScreen ? "bg-light" : ""}>
     <Container>
