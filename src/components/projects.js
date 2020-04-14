@@ -20,20 +20,20 @@ class Project extends React.Component {
     let {imageSrc, title, description, skills, link, github} = this.props;
     return (
       <Col className="project-container" md={12}>
-        <div class="project-image" style={{backgroundImage: `url(${imageSrc})`}}></div>
-        <div class="project-background"></div>
-        <div class="project-content">
+        <div className="project-image" style={{backgroundImage: `url(${imageSrc})`}}></div>
+        <div className="project-background"></div>
+        <div className="project-content">
           <h3>{title}</h3>
           <p dangerouslySetInnerHTML={{ __html: description }} />
-          <div class="project-skills">
-            {skills.map(skill => (<span class="project-skill">{skill}</span>))}
+          <div className="project-skills">
+            {skills.map(skill => (<span className="project-skill">{skill}</span>))}
           </div>
-          <div class="project-links">
+          <div className="project-links">
           {link != null && //if exists
-            <a href={link} rel="noopener noreferrer" target="_blank" class="project-link">Visit Project <GoLinkExternal /></a>
+            <a href={link} rel="noopener noreferrer" target="_blank" className="project-link">Visit Project <GoLinkExternal /></a>
           }
           {github != null && //if exists
-            <a href={github} rel="noopener noreferrer" target="_blank" class="project-link secondary"><GoMarkGithub /> Github</a>
+            <a href={github} rel="noopener noreferrer" target="_blank" className="project-link secondary"><GoMarkGithub /> Github</a>
           }
           </div>
         </div>
@@ -42,12 +42,12 @@ class Project extends React.Component {
 }
 
 const Projects = () => (
-  <section id="projects" class="projects pt-0">
+  <section id="projects" className="projects pt-0">
     <Container>
       <Row>
         <Col className="text-center">
           <h2>My Projects</h2>
-          <p class="mb-5">I have experience with brainstorming, developing, and deploying applications. Here are some of them!</p>
+          <p className="mb-5">I have experience with brainstorming, developing, and deploying applications. Here are some of them!</p>
         </Col>
         <Project
           imageSrc={tetris_image}

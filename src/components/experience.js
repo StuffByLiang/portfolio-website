@@ -16,21 +16,21 @@ class Experience extends React.Component {
     let {logoSrc, company, link, blurb, position, children, start, location, end, skills} = this.props;
     return (
       <Col className="experience-container" md={12}>
-        <div class="experience-header">
+        <div className="experience-header">
           <a href={link}><img src={logoSrc} alt="bitbox design" /></a>
-          <div class="experience-company-info">
+          <div className="experience-company-info">
             <a href={link}><h3>{company}</h3></a>
             <span>{position}</span>
           </div>
         </div>
-        <div class="experience-content">
-          <p class="experience-blurb" dangerouslySetInnerHTML={{ __html: blurb }} />
+        <div className="experience-content">
+          <p className="experience-blurb" dangerouslySetInnerHTML={{ __html: blurb }} />
           <div>{children}</div>
-          <div class="experience-skills">
-            {skills.map(skill => (<span class="experience-skill">{skill}</span>))}
+          <div className="experience-skills">
+            {skills.map(skill => (<span className="experience-skill">{skill}</span>))}
           </div>
         </div>
-        <div class="experience-footer">
+        <div className="experience-footer">
           {start} - {end} | {location}
         </div>
       </Col>
@@ -38,12 +38,12 @@ class Experience extends React.Component {
 }
 
 const Experiences = () => (
-  <section id="experience" class="experiences pt-0">
+  <section id="experience" className="experiences pt-0">
     <Container>
       <Row>
         <Col className="text-center">
           <h2>My Experience</h2>
-          <p class="mb-5">I strive to gain more experience to improve my skills!</p>
+          <p className="mb-5">I strive to gain more experience to improve my skills!</p>
         </Col>
         <Experience
           logoSrc={bitbox}

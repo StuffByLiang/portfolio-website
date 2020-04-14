@@ -15,7 +15,7 @@ class Hero extends React.Component {
   render() {
 
     return (
-    <section class="hero bg-light">
+    <section className="hero bg-light">
     <Container>
       <Row>
         <Col md={10}>
@@ -33,7 +33,7 @@ class Hero extends React.Component {
           /></h1>
           <p><Typed
             strings={[
-              `Currently looking for a 2020 summer internship in a professional setting. Check out my <a href="resume.pdf" class="effect" target="_blank">resume</a>!`
+              `Currently looking for a 2020 summer internship in a professional setting. Check out my <a href="resume.pdf" className="effect" target="_blank">resume</a>!`
             ]}
             showCursor={false}
             stopped={true}
@@ -42,8 +42,8 @@ class Hero extends React.Component {
             })}}
             typeSpeed={10}
           /></p>
-          <h1 class="d-none">Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.</h1>
-          <p class="d-none">Currently looking to practice my skills in a professional setting / internship for the summer of 2020! check out my <a href="resume.pdf" class="effect" target="_blank">resume</a>!</p>
+          <h1 className="d-none">Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.</h1>
+          <p className="d-none">Currently looking to practice my skills in a professional setting / internship for the summer of 2020! check out my <a href="resume.pdf" className="effect" target="_blank">resume</a>!</p>
           {/*<Typed
             strings={[
               'a software developer',
@@ -53,7 +53,7 @@ class Hero extends React.Component {
             backSpeed={25}
             loop={true}
             backDelay={1500}
-          /><span class="d-none">a software developer</span>*/}
+          /><span className="d-none">a software developer</span>*/}
         </Col>
       </Row>
     </Container>

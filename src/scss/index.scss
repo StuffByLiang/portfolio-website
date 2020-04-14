@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700&display=swap');
-
 @import "variables";
 
 $primary-color: #EEC643;
@@ -7,6 +5,11 @@ $background-dark: #fbfbfb;
 $secondary-color: #0ae;
 $transparent-color: rgba(255,255,255,0.3);
 $dark-color: #333;
+
+@import 'base/typography';
+@import 'pages/posts';
+@import 'templates/blog-post';
+@import 'components/bio';
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
@@ -36,20 +39,25 @@ $dark-color: #333;
 a {
   color: #333;
   transition: all 0.2s ease;
+  text-decoration: none;
   &:hover {
     color: $primary-color;
+    text-decoration: none;
   }
 }
 
 .navbar {
-  .navbar-nav .nav-item a  {
+  .navbar-nav .nav-item a, .navbar-brand a  {
     color: #333;
     font-weight: 400;
-    margin-left: 15px;
     text-decoration: none;
     &:hover {
       color: $primary-color;
     }
+  }
+
+  .navbar-nav .nav-item a {
+    margin-left: 15px;
   }
 }
 
@@ -439,7 +447,7 @@ section {
   }
 }
 
-a.effect {
+a.effect, article .content a {
   padding-bottom: 2px;
   background-image:
      linear-gradient(
