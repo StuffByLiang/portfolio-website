@@ -3,10 +3,10 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import {Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col } from "react-bootstrap"
 
-const NotFoundPage = () => (
-  <Layout>
+const NotFoundPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="404 Not Found" />
     <section className="text-center bg-white">
       <Container>

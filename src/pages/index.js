@@ -10,8 +10,8 @@ import Projects from "../components/projects"
 
 import { Container, Row, Col } from "react-bootstrap"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <SEO title="Full-Stack Developer" />
     <Hero />
     <section className="bg-theme about text-center">

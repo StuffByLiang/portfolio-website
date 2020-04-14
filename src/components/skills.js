@@ -1,17 +1,19 @@
 import React from "react"
 
-import {Container, Row, Col} from 'react-bootstrap'
-import { FiCode, FiTerminal } from "react-icons/fi";
-import { MdComputer } from "react-icons/md";
+import { Container, Row, Col } from "react-bootstrap"
+import { FiCode, FiTerminal } from "react-icons/fi"
+import { MdComputer } from "react-icons/md"
 
-const Skill = ({icon, title, description, title2, list}) => (
+const Skill = ({ icon, title, description, title2, list }) => (
   <Col className="skill-container" md={4}>
     {icon}
     <h2>{title}</h2>
     <p>{description}</p>
     <h3>{title2}</h3>
     <ul>
-      {list.map(item => (<li>{item}</li>))}
+      {list.map(item => (
+        <li>{item}</li>
+      ))}
     </ul>
   </Col>
 )
@@ -34,7 +36,7 @@ const Skills = () => (
             "React",
             "Bootstrap",
             "Wordpress",
-            "Responsive Design"
+            "Responsive Design",
           ]}
         />
         <Skill
@@ -51,7 +53,7 @@ const Skills = () => (
             "C++",
             "Git",
             "Nginx",
-            "Linux Server Administration"
+            "Linux Server Administration",
           ]}
         />
         <Skill
@@ -68,7 +70,7 @@ const Skills = () => (
             "Determination",
             "Self-reflection",
             "Giving Back",
-            "Providing Oppurtunities"
+            "Providing Oppurtunities",
           ]}
         />
       </Row>

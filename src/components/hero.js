@@ -1,50 +1,67 @@
 import React from "react"
 
-import Typed from 'react-typed';
+import Typed from "react-typed"
 
-import {Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col } from "react-bootstrap"
 
 class Hero extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       h1: null,
-      p: null
+      p: null,
     }
   }
   render() {
-
     return (
-    <section className="hero bg-light">
-    <Container>
-      <Row>
-        <Col md={10}>
-          <h1><Typed
-            strings={[
-              `Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.`
-            ]}
-            typedRef={(typed) => { this.setState({
-              h1: typed
-            })}}
-            onComplete={(typed)=>{
-              this.state.p.start();
-            }}
-            typeSpeed={45}
-          /></h1>
-          <p><Typed
-            strings={[
-              `Currently looking for a 2020 summer internship in a professional setting. Check out my <a href="resume.pdf" className="effect" target="_blank">resume</a>!`
-            ]}
-            showCursor={false}
-            stopped={true}
-            typedRef={(typed) => { this.setState({
-              p: typed
-            })}}
-            typeSpeed={10}
-          /></p>
-          <h1 className="d-none">Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.</h1>
-          <p className="d-none">Currently looking to practice my skills in a professional setting / internship for the summer of 2020! check out my <a href="resume.pdf" className="effect" target="_blank">resume</a>!</p>
-          {/*<Typed
+      <section className="hero bg-light">
+        <Container>
+          <Row>
+            <Col md={10}>
+              <h1>
+                <Typed
+                  strings={[
+                    `Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.`,
+                  ]}
+                  typedRef={typed => {
+                    this.setState({
+                      h1: typed,
+                    })
+                  }}
+                  onComplete={typed => {
+                    this.state.p.start()
+                  }}
+                  typeSpeed={45}
+                />
+              </h1>
+              <p>
+                <Typed
+                  strings={[
+                    `Currently looking for a 2020 summer internship in a professional setting. Check out my <a href="resume.pdf" className="effect" target="_blank">resume</a>!`,
+                  ]}
+                  showCursor={false}
+                  stopped={true}
+                  typedRef={typed => {
+                    this.setState({
+                      p: typed,
+                    })
+                  }}
+                  typeSpeed={10}
+                />
+              </p>
+              <h1 className="d-none">
+                Hi, I'm Liang Liu, a full stack developer and mentor based in
+                Vancouver, Canada.
+              </h1>
+              <p className="d-none">
+                Currently looking to practice my skills in a professional
+                setting / internship for the summer of 2020! check out my{" "}
+                <a href="resume.pdf" className="effect" target="_blank">
+                  resume
+                </a>
+                !
+              </p>
+              {/*<Typed
             strings={[
               'a software developer',
               'a mentor',
@@ -54,11 +71,12 @@ class Hero extends React.Component {
             loop={true}
             backDelay={1500}
           /><span className="d-none">a software developer</span>*/}
-        </Col>
-      </Row>
-    </Container>
-    </section>
-  )}
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    )
+  }
 }
 
 export default Hero
