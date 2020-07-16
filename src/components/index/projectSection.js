@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 
-import Projects from "../../components/projects"
+import Projects from "../projects"
 
 const ProjectSection = ({projects}) => {
   return (

@@ -49,7 +49,7 @@ const projectTemplate = ({ data, pageContext, location }) => {
             </li>
             <li>
               {next && (
-                <Link to={`/projects/${previous.fields.slug}`} rel="next">
+                <Link to={`/projects/${next.fields.slug}`} rel="next">
                   {next.frontmatter.project} →
                 </Link>
               )}

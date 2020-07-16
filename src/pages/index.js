@@ -5,10 +5,10 @@ import SEO from "../components/seo"
 
 import { graphql } from 'gatsby';
 
-import Hero from "./index/heroSection"
-import Skills from "./index/skillSection"
-import Experience from "./index/experienceSection"
-import Projects from "./index/projectSection"
+import Hero from "../components/index/heroSection"
+import Skills from "../components/index/skillSection"
+import Experience from "../components/index/experienceSection"
+import Projects from "../components/index/projectSection"
 
 import { Container, Row, Col } from "react-bootstrap"
 
