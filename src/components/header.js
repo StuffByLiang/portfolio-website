@@ -21,7 +21,7 @@ const Header = ({ siteTitle, isHomeScreen }) => {
                     <Scrollchor to="#experience">Experience</Scrollchor>
                   </Nav.Item>,
                   <Nav.Item>
-                    <Scrollchor to="#projects">Projects</Scrollchor>
+                    <Link to="/projects">All Projects</Link>
                   </Nav.Item>,
                   <Nav.Item>
                     <Scrollchor to="#contact">Contact</Scrollchor>
@@ -40,7 +40,7 @@ const Header = ({ siteTitle, isHomeScreen }) => {
                     <Link to="/#experience">Experience</Link>
                   </Nav.Item>,
                   <Nav.Item>
-                    <Link to="/#projects">Projects</Link>
+                    <Link to="/projects">All Projects</Link>
                   </Nav.Item>,
                   <Nav.Item>
                     <Link to="/#contact">Contact</Link>

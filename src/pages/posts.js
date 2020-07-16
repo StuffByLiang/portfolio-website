@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Container, Row, Col } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 
 const PostsPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -47,7 +47,10 @@ export default PostsPage
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/posts/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           excerpt

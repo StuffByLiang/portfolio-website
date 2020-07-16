@@ -1,139 +1,175 @@
 import React from "react"
 
-// images
-import stockgame_image from "../images/stockgame.png"
-import tetris_image from "../images/tetris.png"
-import ubc_image from "../images/ubc.png"
-import game_image from "../images/game.png"
-import old_image from "../images/old.jpg"
-import this_image from "../images/this.jpg"
-import javaurlopener_image from "../images/javaurlopener.png"
+import { graphql, Link } from "gatsby"
 
-import { Container, Row, Col } from "react-bootstrap"
-// import { FiCode, FiTerminal } from "react-icons/fi";
-// import { MdComputer } from "react-icons/md";
-import { GoMarkGithub, GoLinkExternal } from "react-icons/go"
+import { Col } from "react-bootstrap"
+import { GoMarkGithub, GoLinkExternal, GoBook } from "react-icons/go"
 
 class Project extends React.Component {
   render() {
-    let { imageSrc, title, description, skills, link, github } = this.props
+    let { imageSrc, title, description, skills, link, github, slug, devpost, date } = this.props
     return (
-      <Col className="project-container" md={12}>
-        <div
-          className="project-image"
-          style={{ backgroundImage: `url(${imageSrc})` }}
-        ></div>
-        <div className="project-background"></div>
-        <div className="project-content">
-          <h3>{title}</h3>
-          <p dangerouslySetInnerHTML={{ __html: description }} />
-          <div className="project-skills">
-            {skills.map(skill => (
-              <span className="project-skill">{skill}</span>
-            ))}
+      <div className="project-wrapper">
+        <Col className="project-container" md={12}>
+          <div
+            className="project-image"
+            style={{ backgroundImage: `url(${imageSrc})` }}
+          ></div>
+          <div className="project-background"></div>
+          <div className="project-content">
+            <h3>{title}</h3>
+            <div className="ribbon">{date}</div>
+            <p>
+              <span dangerouslySetInnerHTML={{ __html: description }} />
+              <div><Link className="effect" to={'projects' + slug}>Read more &rarr;</Link></div>
+            </p>
+            <div className="project-skills">
+              {skills.map(skill => (
+                <span className="project-skill">{skill}</span>
+              ))}
+            </div>
+            <div className="project-links">
+            {devpost != null && ( //if exists
+                <a
+                  href={devpost}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="project-link"
+                >
+                  View Devpost <GoBook />
+                </a>
+              )}
+              {link != null && ( //if exists
+                <a
+                  href={link}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="project-link"
+                >
+                  Visit Project <GoLinkExternal />
+                </a>
+              )}
+              {github != null && ( //if exists
+                <a
+                  href={github}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="project-link secondary"
+                >
+                  <GoMarkGithub /> Github
+                </a>
+              )}
+            </div>
           </div>
-          <div className="project-links">
-            {link != null && ( //if exists
-              <a
-                href={link}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="project-link"
-              >
-                Visit Project <GoLinkExternal />
-              </a>
-            )}
-            {github != null && ( //if exists
-              <a
-                href={github}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="project-link secondary"
-              >
-                <GoMarkGithub /> Github
-              </a>
-            )}
-          </div>
-        </div>
-      </Col>
+        </Col>
+      </div>
     )
   }
 }
 
-const Projects = () => (
-  <section id="projects" className="projects pt-0">
-    <Container>
-      <Row>
-        <Col className="text-center">
-          <h2>My Projects</h2>
-          <p className="mb-5">
-            I have experience with brainstorming, developing, and deploying
-            applications. Here are some of them!
-          </p>
-        </Col>
+const Projects = ({projects}) => {
+  return (
+  <>
+    {projects.map(({node}, i) => {
+      console.log(node.frontmatter)
+      const {date, project, description, technologies, github, link, showcasePic, devpost } = node.frontmatter;
+      let image;
+      if(showcasePic === null)
+        image = ""
+      else
+        image = showcasePic.childImageSharp !== null ? showcasePic.childImageSharp.fluid.src : showcasePic.publicURL;
+      const slug = node.fields.slug;
+      return (
         <Project
-          imageSrc={tetris_image}
-          title="Online Tetris Multiplayer"
-          description="A full-fledged real-time multiplayer tetris game written in javascript using node.js and socket.io, fully implemented with all standard competitive Tetris rules. Fully programmed from scratch from graphics to game logic!"
-          skills={[
-            "HTML5 Canvas",
-            "Javascript",
-            "Socket.io",
-            "Node.js",
-            "Express",
-          ]}
-          link="http://tetris.stuffbyliang.com"
-          github="https://github.com/StuffByLiang/tetris-online"
-        />
-        <Project
-          imageSrc={stockgame_image}
-          title="Stockgame.ca"
-          description="A full-blown stock and cryptocurrency market simulator. Currently has 200+ users with over 2000+ transactions. Supports many features such as loans, buying, selling, rankings, and transaction history. Made mainly with PHP and MySQL as the database.<br><br>Data provided by IEX cloud and Cryptocompare."
-          skills={["PHP", "MySQL", "HTML5", "CSS", "jQuery", "AJAX", "Node.js"]}
-          link="https://stockgame.ca"
-          // github="https://github.com/StuffByLiang/tetris-online"
-        />
-        <Project
-          imageSrc={ubc_image}
-          title="UBC Course Registration Helper App"
-          description="Frustrated that UBC's Course search is horrendous and inconvenient? Need to view all course data in one page rather than clicking? This app can help. Made by scraping UBC's website. Built because UBC's course search sucks.<br><br>Used over 5500 times by 400+ people and saved countless of hours. (This gave me back the 3 hours it took to code this)"
-          skills={["Node.js", "Express", "Web Scraping", "Javascript"]}
-          link="http://ubc.stuffbyliang.com"
-          github="https://github.com/StuffByLiang/UBC-Course-Registration-Helper"
-        />
-        <Project
-          imageSrc={javaurlopener_image}
-          title="Java Url Opener"
-          description="Ever get the feeling to save a bunch of tabs you have to open in a few days? Well, this is a configurable java program to open multiple tabs at the same time, to SAVE time. Fully implemented with a nice, console GUI."
-          skills={["Java", "Object Oriented Programming"]}
-          github="https://github.com/StuffByLiang/java-urlopener"
-        />
-        <Project
-          imageSrc={game_image}
-          title="Node.js MOBA Game"
-          description="A real-time online multiplayer game inspired by MOBA games such as League Of Legends. Game includes support for many players, two teams, and customizable abilities. Play it with your friends, it's pretty fun - for a couple of minutes."
-          skills={["Node.js", "Express", "Socket.io", "Phaser 3", "Javascript"]}
-          link="http://game.stuffbyliang.com"
-          github="https://github.com/StuffByLiang/node_game"
-        />
-        <Project
-          imageSrc={this_image}
-          title="This Site!"
-          description="Responsive website built with ReactJS. Readible code and modern design. Easily mantainable (and good lookin')"
-          skills={["React", "Gatsby", "Node.js", "Javascript", "HTML5", "CSS3"]}
-          link="/"
-          github="https://github.com/StuffByLiang/portfolio-website"
-        />
-        <Project
-          imageSrc={old_image}
-          title="Old Stuffbyliang"
-          description="My old portfolio site made in 2015. Rip 2019 :("
-          skills={["HTML5", "CSS3", "jQuery", "Javascript"]}
-          link="https://old.stuffbyliang.com"
-        />
-      </Row>
-    </Container>
-  </section>
-)
+          key={i}
+          imageSrc={image}
+          title={project}
+          description={description}
+          skills={technologies}
+          link={link}
+          github={github}
+          date={date}
+          slug={slug}
+          devpost={devpost}
+    />
+      )
+    })}
+  </>
+)}
 
 export default Projects
+
+export const query = graphql`
+  fragment allProjects on Query {
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            project
+            description
+            technologies
+            github
+            link
+            devpost
+            showcasePic {
+              publicURL
+              childImageSharp {
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  base64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  fragment frontpageProjects on Query {
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: {frontpage: {eq: true}}
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            project
+            description
+            technologies
+            github
+            link
+            devpost
+            showcasePic {
+              publicURL
+              childImageSharp {
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
+                  base64
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
