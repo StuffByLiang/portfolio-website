@@ -7,7 +7,17 @@ import { GoMarkGithub, GoLinkExternal, GoBook } from "react-icons/go"
 
 class Project extends React.Component {
   render() {
-    let { imageSrc, title, description, skills, link, github, slug, devpost, date } = this.props
+    let {
+      imageSrc,
+      title,
+      description,
+      skills,
+      link,
+      github,
+      slug,
+      devpost,
+      date,
+    } = this.props
     return (
       <div className="project-wrapper">
         <Col className="project-container" md={12}>
@@ -21,15 +31,22 @@ class Project extends React.Component {
             <div className="ribbon">{date}</div>
             <p>
               <span dangerouslySetInnerHTML={{ __html: description }} />
-              <div><Link className="effect" to={'projects' + slug}>Read more &rarr;</Link></div>
+              <div>
+                <Link className="effect" to={"projects" + slug}>
+                  Read more &rarr;
+                </Link>
+              </div>
             </p>
+            <div className="project-skills"></div>
             <div className="project-skills">
-              {skills.map(skill => (
-                <span className="project-skill">{skill}</span>
+              {skills.map((skill, i) => (
+                <span key={i} className="project-skill">
+                  {skill}
+                </span>
               ))}
             </div>
             <div className="project-links">
-            {devpost != null && ( //if exists
+              {devpost != null && ( //if exists
                 <a
                   href={devpost}
                   rel="noopener noreferrer"
@@ -67,44 +84,53 @@ class Project extends React.Component {
   }
 }
 
-const Projects = ({projects}) => {
+const Projects = ({ projects }) => {
   return (
-  <>
-    {projects.map(({node}, i) => {
-      console.log(node.frontmatter)
-      const {date, project, description, technologies, github, link, showcasePic, devpost } = node.frontmatter;
-      let image;
-      if(showcasePic === null)
-        image = ""
-      else
-        image = showcasePic.childImageSharp !== null ? showcasePic.childImageSharp.fluid.src : showcasePic.publicURL;
-      const slug = node.fields.slug;
-      return (
-        <Project
-          key={i}
-          imageSrc={image}
-          title={project}
-          description={description}
-          skills={technologies}
-          link={link}
-          github={github}
-          date={date}
-          slug={slug}
-          devpost={devpost}
-    />
-      )
-    })}
-  </>
-)}
+    <>
+      {projects.map(({ node }, i) => {
+        const {
+          date,
+          project,
+          description,
+          technologies,
+          github,
+          link,
+          showcasePic,
+          devpost,
+        } = node.frontmatter
+        let image
+        if (showcasePic === null) image = ""
+        else
+          image =
+            showcasePic.childImageSharp !== null
+              ? showcasePic.childImageSharp.fluid.src
+              : showcasePic.publicURL
+        const slug = node.fields.slug
+        return (
+          <Project
+            key={i}
+            imageSrc={image}
+            title={project}
+            description={description}
+            skills={technologies}
+            link={link}
+            github={github}
+            date={date}
+            slug={slug}
+            devpost={devpost}
+          />
+        )
+      })}
+    </>
+  )
+}
 
 export default Projects
 
 export const query = graphql`
   fragment allProjects on Query {
     allMarkdownRemark(
-      filter: {
-        fileAbsolutePath: { regex: "/projects/" }
-      }
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -140,7 +166,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/projects/" }
-        frontmatter: {frontpage: {eq: true}}
+        frontmatter: { frontpage: { eq: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
