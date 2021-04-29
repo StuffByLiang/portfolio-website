@@ -5,7 +5,7 @@ description: "Frustrated that UBC's Course search is horrendous and inconvenient
 technologies: ["Node.js", "Express", "Web Scraping", "Javascript"]
 github: https://github.com/StuffByLiang/UBC-Course-Registration-Helper
 link: https://ubc.stuffbyliang.com
-frontpage: true
+frontpage: false
 showcasePic: ubc.png
 ---
 

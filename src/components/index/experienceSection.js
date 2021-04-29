@@ -4,6 +4,8 @@ import React from "react"
 import bitbox from "../../images/logos/bitbox.png"
 import launchpad from "../../images/logos/launchpad.png"
 import ubcuas from "../../images/logos/uas.png"
+import mlh from "../../images/logos/mlh.png"
+import atb from "../../images/logos/atb.png"
 
 import { Container, Row, Col } from "react-bootstrap"
 // import { FiCode, FiTerminal } from "react-icons/fi";
@@ -38,7 +40,9 @@ class Experience extends React.Component {
           </div>
         </div>
         <div className="experience-content">
-          <div className="ribbon">{start} - {end}</div>
+          <div className="ribbon">
+            {start} - {end}
+          </div>
           <p
             className="experience-blurb"
             dangerouslySetInnerHTML={{ __html: blurb }}
@@ -50,9 +54,7 @@ class Experience extends React.Component {
             ))}
           </div>
         </div>
-        <div className="experience-footer">
-          {location}
-        </div>
+        <div className="experience-footer">{location}</div>
       </Col>
     )
   }
@@ -69,18 +71,70 @@ const Experiences = () => (
           </p>
         </Col>
         <Experience
-          logoSrc={launchpad}
-          company="UBC Launchpad"
-          link="https://www.ubclaunchpad.com/"
-          blurb="UBC Launch Pad is a software engineering design team devoted to building software projects in a collaborative and professional environment."
-          position="Developer"
-          start="Sept 2019"
+          logoSrc={atb}
+          company="ATB Financial"
+          link="https://www.atb.com/"
+          blurb="ATB Financial is a financial institution and Crown corporation wholly owned by the Province of Alberta. ATB Financial provides financial services to over 770,000 Alberta residents and businesses with $51.9 billion in assets."
+          position="Software Development Intern"
+          start="Jan 2021"
           location="Vancouver, BC"
           end="Present"
-          skills={["Javascript", "Node.js", "Docker", "React.js"]}
+          skills={[
+            "React",
+            "Java",
+            "Google Cloud Platform",
+            "Typescript",
+            "Material UI",
+            "Jest",
+            "Spring Boot",
+            "Gitlab",
+            "Google App Engine",
+          ]}
         >
-        <p>Practiced agile development with a full team of strategists, UI/UX designers and other developer. Created a realtime leetcode player vs player web app with Node.js, React, Redux, and web sockets.</p>
-        <p>Currently working on an app utilizing a 3d pose machine vision model to aid with affordable and accessible physiotherapy.</p>
+          <p>
+            Working full-stack on the internal admin/employee dashboard for
+            banking products, using React, MobX, Typescript, and GitLab for the
+            frontend, and Java Spring Boot and Google Cloud Platform on the
+            backend.
+          </p>
+          <p>
+            Migrated legacy admin/employee dashboard to a heavily improved user
+            interface and released the internal app to over 300 Banking Team
+            members.
+          </p>
+          <p>
+            Implemented frontend end-to-end integration (account and product
+            creation) automating banking manual processes to save employees ~25
+            minutes per application.
+          </p>
+        </Experience>
+        <Experience
+          logoSrc={mlh}
+          company="Major League Hacking (MLH)"
+          link="https://fellowship.mlh.io/"
+          blurb="The MLH Fellowship is a 12 week internship alternative for aspiring software engineers. Instead of interning at a single company, on the Open Source Track you'll contribute to the type of Open Source projects that every company depends on."
+          position="Software Engineering Intern (MLH Fellow)"
+          start="Sept 2020"
+          location="Vancouver, BC"
+          end="Dec 2020"
+          skills={[
+            "Javascript",
+            "React Native",
+            "Jest",
+            "Node.js",
+            "Husky CI/CD",
+          ]}
+        >
+          <p>
+            One of under 200 developers selected out of an application pool of
+            ~10,000 people to contribute to React Native
+          </p>
+          <p>
+            Planned, engineered, and documented a git workflow for tutorials
+            using Husky, and built an internal cli using node.js. Set up a
+            mobile app infrastructure using React Navigation, Jest, and the
+            React Native Testing Library
+          </p>
         </Experience>
         <Experience
           logoSrc={ubcuas}
@@ -93,8 +147,37 @@ const Experiences = () => (
           end="Present"
           skills={["React", "Python", "Flask", "C++", "Docker", "Linux"]}
         >
-          <p>Tasked with implementing elements of the ground control software suite for our team's unmanned aircrafts.</p>
-          <p>Wrote a REST api for the onboard flight software responsible for communicating with the aircraft, such as obtaining telemetry data or rerouting the aircraft's path for the intent of obstacle avoidance. Gained value experience working with other developers on a project.</p>
+          <p>
+            Tasked with implementing elements of the ground control software
+            suite for our team's unmanned aircrafts.
+          </p>
+          <p>
+            Wrote a REST api for the onboard flight software responsible for
+            communicating with the aircraft, such as obtaining telemetry data or
+            rerouting the aircraft's path for the intent of obstacle avoidance.
+            Gained value experience working with other developers on a project.
+          </p>
+        </Experience>
+        <Experience
+          logoSrc={launchpad}
+          company="UBC Launchpad"
+          link="https://www.ubclaunchpad.com/"
+          blurb="UBC Launch Pad is a software engineering design team devoted to building software projects in a collaborative and professional environment."
+          position="Developer"
+          start="Sept 2019"
+          location="Vancouver, BC"
+          end="Sept 2020"
+          skills={["Javascript", "Node.js", "Docker", "React.js"]}
+        >
+          <p>
+            Practiced agile development with a full team of strategists, UI/UX
+            designers and other developer. Created a realtime leetcode player vs
+            player web app with Node.js, React, Redux, and web sockets.
+          </p>
+          <p>
+            Currently working on an app utilizing a 3d pose machine vision model
+            to aid with affordable and accessible physiotherapy.
+          </p>
         </Experience>
         <Experience
           logoSrc={bitbox}
@@ -115,11 +198,15 @@ const Experiences = () => (
             "Time Management",
           ]}
         >
-         <p>Currently managing all aspects of the agency: client acquisition,
-          sales, marketing, and developing PHP Wordpress sites for businesses.
-          Also in charge of marketing strategy for clients.</p> <p>Gained experience
-          with time managing strict deadlines, general problem solving and
-          client communication.</p>
+          <p>
+            Currently managing all aspects of the agency: client acquisition,
+            sales, marketing, and developing PHP Wordpress sites for businesses.
+            Also in charge of marketing strategy for clients.
+          </p>{" "}
+          <p>
+            Gained experience with time managing strict deadlines, general
+            problem solving and client communication.
+          </p>
         </Experience>
       </Row>
     </Container>

@@ -5,6 +5,8 @@ import Typed from "react-typed"
 import { Container, Row, Col } from "react-bootstrap"
 import { GoMarkGithub, GoLinkExternal, GoBook } from "react-icons/go"
 
+import Avatar from "../../images/avatar.svg"
+
 class Hero extends React.Component {
   constructor(props) {
     super(props)
@@ -18,7 +20,7 @@ class Hero extends React.Component {
       <section className="hero bg-light">
         <Container>
           <Row>
-            <Col md={10}>
+            <Col md={12}>
               <h1>
                 <Typed
                   strings={[
@@ -32,7 +34,7 @@ class Hero extends React.Component {
                   onComplete={typed => {
                     this.state.p.start()
                   }}
-                  typeSpeed={45}
+                  typeSpeed={55}
                 />
               </h1>
               <p>
@@ -55,7 +57,8 @@ class Hero extends React.Component {
                 Vancouver, Canada.
               </h1>
               <p className="d-none">
-                Open to all opportunities to work together and other inquiries. Feel free to check out my{" "}
+                Open to all opportunities to work together and other inquiries.
+                Feel free to check out my{" "}
                 <a href="resume.pdf" className="effect" target="_blank">
                   resume
                 </a>
