@@ -158,7 +158,7 @@ const Experiences = () => (
             Gained value experience working with other developers on a project.
           </p>
         </Experience>
-        <Experience
+        {/* <Experience
           logoSrc={launchpad}
           company="UBC Launchpad"
           link="https://www.ubclaunchpad.com/"
@@ -178,7 +178,7 @@ const Experiences = () => (
             Currently working on an app utilizing a 3d pose machine vision model
             to aid with affordable and accessible physiotherapy.
           </p>
-        </Experience>
+        </Experience> */}
         <Experience
           logoSrc={bitbox}
           company="Bitbox Design"
