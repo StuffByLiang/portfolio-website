@@ -2,6 +2,8 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
+import { isStuffByLiang } from "../utils/isStuffByLiang"
+
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -43,7 +45,7 @@ const Bio = () => {
         }}
       />
       <div className="bio">
-        <h5>{author.name}</h5>
+        <h5>{isStuffByLiang() ? "Liang" : author.name}</h5>
         <p>{author.summary}</p>
         {` `}
         {/* <a href={`https://twitter.com/${social.twitter}`}>

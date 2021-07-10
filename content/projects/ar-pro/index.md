@@ -4,7 +4,7 @@ date: "2020-02-10T03:39:55.731Z"
 description: "An AR Android application to let you view the latest Best Buy product in your home, from the comfort of your pyjamas. 2nd place out of over 300 people"
 technologies: ["Node.js", "Express", "socket.io", "Phaser 3", "Javascript"]
 github: "https://github.com/StuffByLiang/node_game"
-link: "https://game.stuffbyliang.com/"
+link: "https://devpost.com/software/bizhacks-best-buy-ar"
 frontpage: true
 showcasePic: team.jpg
 ---
@@ -35,4 +35,4 @@ We developed an AR (augmented reality) android application. In this app, you're 
 ## Lessons learned
 This was my first time working in an android app! It was fun working with [Michael Demarco](https://michaeldemar.co/), another awesome developer with an amazing sense of humour. It was also fun working with the business strategists, Benji Li, Daniel Frydman, and Ophir Greif. Also fun spending the $250 Best Buy gift card each one of us won ;)
 
-download the apk [here](https://stuffbyliang.com/ar.apk)
+download the apk [here](https://stuffbydavid.com/ar.apk)

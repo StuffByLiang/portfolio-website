@@ -2,7 +2,7 @@
   <img alt="Liang Logo" src="src/images/logo.png" width="60" />
 </p>
 <h1 align="center">
-  Stuffbyliang
+  Stuffbyliang / Stuffbydavid
 </h1>
 
 ## 🚀 Quick start

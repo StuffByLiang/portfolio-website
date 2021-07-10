@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Liang Liu`,
-    description: `Hi, I'm Liang Liu, a web developer and mentor based in Vancouver, Canada.`,
+    title: `David Liu`,
+    description: `Hi, I'm David Liu, a web developer and mentor based in Vancouver, Canada.`,
     author: {
-      name: `Liang Liu`,
-      summary: `An innovative 18 year old programmer, entrepreneur. Small kid looking to make it big in a huge world.`
+      name: `David Liu`,
+      summary: `An innovative 20 year old programmer, entrepreneur. Small kid looking to make it big in a huge world.`,
     },
   },
   plugins: [
@@ -54,7 +54,7 @@ module.exports = {
               // base for generating different widths of each image.
               maxWidth: 720,
             },
-          }
+          },
         ],
       },
     },
@@ -72,7 +72,7 @@ module.exports = {
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

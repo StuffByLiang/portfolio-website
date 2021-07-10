@@ -4,7 +4,7 @@ date: "2019-05-12T03:39:55.731Z"
 description: "A real-time online multiplayer game inspired by MOBA games like League Of Legends. Game includes support for many players, teams, and customizable abilities. Play it with your friends, it's pretty fun - for a couple of minutes."
 technologies: ["Node.js", "Express", "socket.io", "Phaser 3", "Javascript"]
 github: "https://github.com/StuffByLiang/node_game"
-link: "https://game.stuffbyliang.com/"
+link: "https://game.stuffbydavid.com/"
 frontpage: true
 showcasePic: game.png
 ---
@@ -14,7 +14,7 @@ showcasePic: game.png
 Was kinda bored and I liked making games, so I decided to make this app.
 
 ## How to play
-Basically go to [game.stuffbyliang.com](https://game.stuffbyliang.com/) and enter a username. Get your friends to join. Change your team and abilities at [game.stuffbyliang.com/settings](https://game.stuffbyliang.com/settings)
+Basically go to [game.stuffbydavid.ca](https://game.stuffbydavid.ca/) and enter a username. Get your friends to join. Change your team and abilities at [game.stuffbydavid.ca/settings](https://game.stuffbydavid.ca/settings)
 
 ## Features
 - Multiple players

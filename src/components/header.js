@@ -2,6 +2,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
 import Scrollchor from "react-scrollchor"
+import { isStuffByLiang } from "../utils/isStuffByLiang"
 
 import { Navbar, Nav, Container } from "react-bootstrap"
 
@@ -10,7 +11,7 @@ const Header = ({ siteTitle, isHomeScreen }) => {
     <Navbar expand="lg" className={isHomeScreen ? "bg-light" : ""}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">Liang Liu</Link>
+          <Link to="/">{isStuffByLiang() ? "Liang" : "David"} Liu</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

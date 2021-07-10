@@ -7,6 +7,8 @@ import { GoMarkGithub, GoLinkExternal, GoBook } from "react-icons/go"
 
 import Avatar from "../../images/avatar.svg"
 
+import { isStuffByLiang } from "../../utils/isStuffByLiang"
+
 class Hero extends React.Component {
   constructor(props) {
     super(props)
@@ -24,7 +26,9 @@ class Hero extends React.Component {
               <h1>
                 <Typed
                   strings={[
-                    `Hi, I'm Liang Liu, a full stack developer and mentor based in Vancouver, Canada.`,
+                    `Hi, I'm ${
+                      isStuffByLiang() ? "Liang" : "David"
+                    } Liu, a full stack developer and mentor based in Vancouver, Canada.`,
                   ]}
                   typedRef={typed => {
                     this.setState({
@@ -53,8 +57,8 @@ class Hero extends React.Component {
                 />
               </p>
               <h1 className="d-none">
-                Hi, I'm Liang Liu, a full stack developer and mentor based in
-                Vancouver, Canada.
+                Hi, I'm {isStuffByLiang() ? "Liang" : "David"} Liu, a full stack
+                developer and mentor based in Vancouver, Canada.
               </h1>
               <p className="d-none">
                 Open to all opportunities to work together and other inquiries.
