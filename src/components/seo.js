@@ -10,9 +10,11 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { isStuffByLiang } from "../utils/isStuffByLiang"
+import { useIsStuffByLiang } from "../utils/isStuffByLiang"
 
 function SEO({ description, lang, meta, title }) {
+  const isStuffByLiang = useIsStuffByLiang()
+
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -39,7 +41,7 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`${
-        isStuffByLiang() ? "Liang Liu" : site.siteMetadata.title
+        isStuffByLiang ? "Liang Liu" : site.siteMetadata.title
       } | %s`}
       meta={[
         {

@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { graphql } from 'gatsby';
+import { graphql } from "gatsby"
 
 import Hero from "../components/index/heroSection"
 import Skills from "../components/index/skillSection"
@@ -11,9 +11,11 @@ import Experience from "../components/index/experienceSection"
 import Projects from "../components/index/projectSection"
 
 import { Container, Row, Col } from "react-bootstrap"
+import { useIsStuffByLiang } from "../utils/isStuffByLiang"
 
 const IndexPage = ({ location, data }) => {
-  let projects = data.allMarkdownRemark.edges;
+  const isStuffByLiang = useIsStuffByLiang()
+  let projects = data.allMarkdownRemark.edges
   return (
     <Layout location={location}>
       <SEO title="Full-Stack Developer" />
@@ -31,12 +33,16 @@ const IndexPage = ({ location, data }) => {
                 entrepreneurship, business administration, machine learning,
                 application development, as well as the world of fintech,
                 specifically open banking. I've always had a constant desire to
-                learn new technologies, and over the years, I have strived to gain
-                as much industry knowledge that relates to my interests as I can.
-                Apart from that, I play Ultimate Frisbee and do lots of other
-                extracurricular activities. Feel free to take a look around my
-                website, view my{" "}
-                <a className="effect dark" href="resume.pdf" target="_blank">
+                learn new technologies, and over the years, I have strived to
+                gain as much industry knowledge that relates to my interests as
+                I can. Apart from that, I play Ultimate Frisbee and do lots of
+                other extracurricular activities. Feel free to take a look
+                around my website, view my{" "}
+                <a
+                  className="effect dark"
+                  href={`resume${isStuffByLiang ? "_liang" : ""}.pdf`}
+                  target="_blank"
+                >
                   resume
                 </a>{" "}
                 or contact me!

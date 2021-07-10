@@ -2,9 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
-import { isStuffByLiang } from "../utils/isStuffByLiang"
+import { useIsStuffByLiang } from "../utils/isStuffByLiang"
 
 const Bio = () => {
+  const isStuffByLiang = useIsStuffByLiang()
   const data = useStaticQuery(graphql`
     query BioQuery {
       avatar: file(absolutePath: { regex: "/liang.jpg/" }) {
@@ -45,7 +46,7 @@ const Bio = () => {
         }}
       />
       <div className="bio">
-        <h5>{isStuffByLiang() ? "Liang" : author.name}</h5>
+        <h5>{isStuffByLiang ? "Liang" : author.name}</h5>
         <p>{author.summary}</p>
         {` `}
         {/* <a href={`https://twitter.com/${social.twitter}`}>

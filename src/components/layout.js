@@ -5,6 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import { useLocation } from "@reach/router"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -14,7 +15,8 @@ import Footer from "./footer"
 
 import "../scss/index.scss"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ children }) => {
+  const location = useLocation()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

@@ -2,16 +2,17 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
 import Scrollchor from "react-scrollchor"
-import { isStuffByLiang } from "../utils/isStuffByLiang"
+import { useIsStuffByLiang } from "../utils/isStuffByLiang"
 
 import { Navbar, Nav, Container } from "react-bootstrap"
 
 const Header = ({ siteTitle, isHomeScreen }) => {
+  const isStuffByLiang = useIsStuffByLiang()
   return (
     <Navbar expand="lg" className={isHomeScreen ? "bg-light" : ""}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">{isStuffByLiang() ? "Liang" : "David"} Liu</Link>
+          <Link to="/">{isStuffByLiang ? "Liang" : "David"} Liu</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -31,7 +32,10 @@ const Header = ({ siteTitle, isHomeScreen }) => {
                     <Link to="/posts">All Posts</Link>
                   </Nav.Item>,
                   <Nav.Item>
-                    <a href="/resume.pdf" target="_blank">
+                    <a
+                      href={`/resume${isStuffByLiang ? "_liang" : ""}.pdf`}
+                      target="_blank"
+                    >
                       Resume
                     </a>
                   </Nav.Item>,
@@ -50,7 +54,10 @@ const Header = ({ siteTitle, isHomeScreen }) => {
                     <Link to="/posts">All Posts</Link>
                   </Nav.Item>,
                   <Nav.Item>
-                    <a href="/resume.pdf" target="_blank">
+                    <a
+                      href={`/resume${isStuffByLiang ? "_liang" : ""}.pdf`}
+                      target="_blank"
+                    >
                       Resume
                     </a>
                   </Nav.Item>,

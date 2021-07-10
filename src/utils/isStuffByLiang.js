@@ -1,1 +1,5 @@
-export const isStuffByLiang = () => window.location.host === "stuffbyliang.com"
+import { useLocation } from "@reach/router"
+
+export const useIsStuffByLiang = () => {
+  return useLocation()?.href?.includes("liang") ?? false
+}
